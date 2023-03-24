@@ -1,6 +1,6 @@
 .input-con{
     width: 300px;
-    max-height: 400px;
+    
     position: absolute;
     top: 5px;
     left: 5px;
@@ -8,6 +8,7 @@
     background-color: white;
     padding: 5px;
     border-radius: 7px;
+    
 }
 .input-sub-con{
     display: flex;
@@ -42,6 +43,8 @@ input{
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
+    max-height: 300px;
+    overflow-y: scroll;
 }
 .filtered-p{
     cursor: pointer;

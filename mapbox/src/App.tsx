@@ -21,11 +21,12 @@ function App() {
     latitude: 9.0778,
     zoom: 10
 })
+console.log(ourView)
   return (
     <div className="App">
-      <Navbar open={open} setopen={setopen}/>
+      <Navbar open={open} setopen={setopen} />
       <div className='down-container'>
-        <Sidebar open={open}/>
+        <Sidebar open={open} setourview={setourview} setopen={setopen}/>
         <Map ourView={ourView} setourview={setourview}/>
       </div>
     </div>

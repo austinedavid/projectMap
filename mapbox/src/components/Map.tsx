@@ -6,6 +6,7 @@ import Search from './Search';
 import {cities, Icity} from "../assets/Cities"
 import{Iviews} from '../App'
 import axios from "axios"
+import PlaceIcon from '@mui/icons-material/Place';
 
 
 
@@ -20,9 +21,9 @@ const Map = ({ourView, setourview}:Imaps) => {
     const[openDiv, setopenDiv] = useState<boolean>(false)
     const[searchInput, setInput] = useState<string>("")
     const[filtered, setfiltered] = useState<Icity[]>([])
+    const[openOpoup, setOpenpopup] = useState<boolean>(false)
     const[weather, setweather] = useState([])
-    console.log(filtered)
-    console.log(openDiv)
+    console.log(openOpoup)
     // this use eefect is for filtering when there is change in the input
     // add also to open up the divs
     useEffect(()=>{
@@ -40,24 +41,51 @@ const Map = ({ourView, setourview}:Imaps) => {
     //     setInput(city.name)
       
     // }
+    // here  we handle the opening of the weather of our map
+    const handleOpenPopup = ()=>{
+      setOpenpopup(true)
+    }
+
   return (
     <div className='map-container'>
       <MapGl
          mapboxAccessToken={API_KEY}
          initialViewState={{
-          longitude: 7.548949,
-          latitude: 6.459964,
+          longitude: 8.6775,
+          latitude: 9.0778,
           zoom: 10
         }}
+        longitude={ourView.longitude}
+        latitude={ourView.latitude}
+        zoom={ourView.zoom}
          style={{width: "100%", height: "100%"}}
          mapStyle = "mapbox://styles/austinedavid1/clfj5diqm002x01pcfhi59coh"
          
          attributionControl={true}
          doubleClickZoom={true}
       >
-
+        <Marker
+          longitude={ourView.longitude}
+          latitude={ourView.latitude}
+          onClick={()=>handleOpenPopup()}
+        >
+          <PlaceIcon  sx={{color: "red", fontSize: 30, cursor:"pointer"}}/>
+        </Marker>
+        {
+          openOpoup? (
+            <Popup
+          longitude={ourView.longitude}
+          latitude={ourView.latitude}
+          maxWidth={"300px"}
+        >
+          <div className='popUp'>
+            <p>jsjjsjjsjjsjjsjsjjsjsjsjjsjsjsjsjjs</p>
+          </div>
+        </Popup>
+          ): <div></div>
+        }
       </MapGl>
-      <Search searchInput={searchInput} setInput={setInput} openDiv={openDiv} filtered={filtered} />
+      <Search setourview={setourview} searchInput={searchInput} setInput={setInput} openDiv={openDiv} filtered={filtered} />
     </div>
   )
 }
