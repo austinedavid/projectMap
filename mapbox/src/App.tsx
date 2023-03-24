@@ -5,12 +5,12 @@ import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 
 function App() {
-  
+  const[open, setopen] = useState<boolean>(false)
 
   return (
     <div className="App">
-      <Navbar/>
-      <div>
+      <Navbar open={open} setopen={setopen}/>
+      <div className='down-container'>
         <Sidebar/>
         <Map/>
       </div>
