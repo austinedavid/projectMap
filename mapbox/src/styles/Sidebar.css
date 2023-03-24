@@ -29,6 +29,7 @@
         background-color: rgb(19, 19, 19);
         transform: translateX(-100%);
         transition: all 0.5s ease;
+        z-index: 9999;
     }
    
     .sidebar-close{
@@ -40,5 +41,6 @@
         overflow-y: scroll;
         background-color: rgb(19, 19, 19);
         transition: all 0.5s ease;
+        z-index: 9999;
     }
 }
