@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Navbar open={open} setopen={setopen}/>
       <div className='down-container'>
-        <Sidebar/>
+        <Sidebar open={open}/>
         <Map/>
       </div>
     </div>

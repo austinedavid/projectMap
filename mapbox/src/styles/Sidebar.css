@@ -1,0 +1,44 @@
+.sidebar-con{
+    background-color: rgb(19, 19, 19);
+    padding: 30px 10px;
+    overflow-y: scroll;
+}
+.city-div{
+    background-color:rgb(43, 43, 43) ;
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+.city-div:hover{
+    background-color: rgb(69, 68, 68);
+}
+.city-div p{
+    color: white;
+}
+
+/* media query for our mobile view */
+@media(max-width:450px){
+    .sidebar-con{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        bottom: 0px;
+        overflow-y: scroll;
+        background-color: rgb(19, 19, 19);
+        transform: translateX(-100%);
+        transition: all 0.5s ease;
+    }
+   
+    .sidebar-close{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        bottom: 0px;
+        overflow-y: scroll;
+        background-color: rgb(19, 19, 19);
+        transition: all 0.5s ease;
+    }
+}
