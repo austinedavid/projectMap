@@ -72,18 +72,6 @@ const Map = ({ourView, setourview}:Imaps) => {
           <PlaceIcon  sx={{color: "red", fontSize: 30, cursor:"pointer"}}/>
         </Marker>
        
-        <Popup
-          longitude={ourView.longitude}
-          latitude={ourView.latitude}
-          maxWidth={"300px"}
-          anchor="bottom"
-          
-        >
-          <div className='popUp'>
-            <p></p>
-          </div>
-        </Popup>
-        
       </MapGl>
       <Search setourview={setourview} searchInput={searchInput} setInput={setInput} openDiv={openDiv} filtered={filtered} />
     </div>
