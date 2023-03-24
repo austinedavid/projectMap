@@ -16,6 +16,14 @@
   position: relative;
 }
 
+/* handle media query for tablets */
+
+@media(max-width:950px){
+  .down-container{
+   grid-template-columns: 30%  70%;
+   position: relative;
+  }
+}
 /* handle media queries for mobile view */
 @media(max-width:450px){
  .down-container{

@@ -23,7 +23,7 @@ const Map = ({ourView, setourview}:Imaps) => {
     const[filtered, setfiltered] = useState<Icity[]>([])
     const[openOpoup, setOpenpopup] = useState<boolean>(false)
     const[weather, setweather] = useState([])
-    console.log(openOpoup)
+    
     // this use eefect is for filtering when there is change in the input
     // add also to open up the divs
     useEffect(()=>{
@@ -71,19 +71,19 @@ const Map = ({ourView, setourview}:Imaps) => {
         >
           <PlaceIcon  sx={{color: "red", fontSize: 30, cursor:"pointer"}}/>
         </Marker>
-        {
-          openOpoup? (
-            <Popup
+       
+        <Popup
           longitude={ourView.longitude}
           latitude={ourView.latitude}
           maxWidth={"300px"}
+          anchor="bottom"
+          
         >
           <div className='popUp'>
-            <p>jsjjsjjsjjsjjsjsjjsjsjsjjsjsjsjsjjs</p>
+            <p></p>
           </div>
         </Popup>
-          ): <div></div>
-        }
+        
       </MapGl>
       <Search setourview={setourview} searchInput={searchInput} setInput={setInput} openDiv={openDiv} filtered={filtered} />
     </div>
